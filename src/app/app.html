@@ -1,0 +1,22 @@
+<ion-menu [content]="content">
+  <ion-content class="bgcolor">
+      <div class="header">
+        <h3>HybridApp</h3>
+        <h5>ยินดีต้อนรับ<br>คุณ&nbsp;{{(profileData | async)?.firstname}}&nbsp;&nbsp;{{(profileData | async)?.lastname}}<br>เบอร์โทร&nbsp;{{(profileData | async)?.tel}}</h5>
+        <button menuClose (click)="changepassword()"><i class="fas fa-key fa-sm"></i>&nbsp;เปลี่ยนรหัสผ่าน</button>
+        <button menuClose (click)="editdata()"><i class="fas fa-user-edit fa-sm"></i>&nbsp;แก้ไขข้อมูล</button>
+        <br>
+        <button menuClose (click)="signout()"><i class="fas fa-sign-out-alt fa-sm"></i>&nbsp;ลงชื่อออก&nbsp;</button>
+      </div>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" [class.active]="isActive(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>{{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+      <p position="bottom" style="color:#818181;text-align: center;">เวอร์ชัน&nbsp;:&nbsp;{{version}}</p>
+  </ion-footer>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="float:left">ข่าวสาร</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+      <ion-card *ngFor="let item of newsData | async" (click)="readnews(item.id)">
+
+          <img src="{{item.imagelink}}">
+        
+          <ion-card-content>
+            {{item.header}}
+          </ion-card-content>
+        
+      </ion-card>
+</ion-content>

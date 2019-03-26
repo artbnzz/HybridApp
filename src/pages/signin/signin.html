@@ -1,0 +1,24 @@
+<!--
+  Generated template for the SigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>สมัครสมาชิก</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <label>อีเมล์<input type="text" [(ngModel)]="user.email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" placeholder="ระบุอีเมล์"></label>
+  <label>รหัสผ่าน <input type="password" [(ngModel)]="user.password" placeholder="ระบุรหัสผ่าน"></label>
+  <label>ยืนยันรหัสผ่าน <input type="password" [(ngModel)]="user.confirmpassword" placeholder="ระบุยืนยันรหัสผ่าน"></label>
+  <label>ชื่อ <input type="text" [(ngModel)]="user.firstname" placeholder="ระบุชื่อ"></label>
+  <label>นามสกุล <input type="text" [(ngModel)]="user.lastname" placeholder="ระบุนามสกุล"></label>
+  <label>เบอร์โทรศัพท์ <input type="tel" [(ngModel)]="user.tel" [maxlength]="10" [minlength]="10" (keypress)="numberOnly($event)" placeholder="ระบุเบอร์โทรศัพท์"></label>
+  <button clear class="signup" (click)="register(user)">สมัครสมาชิก</button>
+</ion-content>  

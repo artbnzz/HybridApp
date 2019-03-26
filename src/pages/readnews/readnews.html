@@ -1,0 +1,14 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title style="float:left">อ่านข่าว</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+      <h3>{{(newsData | async)?.header}}</h3>
+      <img src="{{(newsData | async)?.imagelink}}">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{(newsData | async)?.detail}}</p>
+  </ion-content>
+  

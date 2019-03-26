@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title style="float:left">ถ่ายวีดีโอ</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+      <ion-item>
+          <ion-label>คุณภาพของวีดีโอ</ion-label>
+          <ion-select [(ngModel)]="vdoQuality">
+            <ion-option value="100">สูง</ion-option>
+            <ion-option value="50">กลาง</ion-option>
+            <ion-option value="25">ต่ำ</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>บันทึกต่อเนื่อง</ion-label>
+          <ion-select [(ngModel)]="alwaysrecord">
+            <ion-option value="1">1 ครั้ง</ion-option>
+            <ion-option value="2">2 ครั้ง</ion-option>
+            <ion-option value="3">3 ครั้ง</ion-option>
+            <ion-option value="4">4 ครั้ง</ion-option>
+            <ion-option value="5">5 ครั้ง</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>เวลาบันทึกสูงสุด</ion-label>
+          <ion-select [(ngModel)]="duration">
+            <ion-option value="30">30 วินาที</ion-option>
+            <ion-option value="60">1 นาที</ion-option>
+            <ion-option value="120">2 นาที</ion-option>
+            <ion-option value="180">3 นาที</ion-option>
+            <ion-option value="240">4 นาที</ion-option>
+            <ion-option value="300">5 นาที</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-row center>  
+        <ion-col text-center>   
+          <button ion-button round [disabled]="!vdoQuality || !alwaysrecord || !alwaysrecord" (click)="captureVideo()"><i class="fas fa-video fa-lg"></i>&nbsp;ถ่ายวีดีโอ</button>
+          <button ion-button round class="getPictures" (click)="getVideo();"><i class="fas fa-play-circle"></i>&nbsp;ดูวีดีโอ</button>
+        </ion-col> 
+      </ion-row>
+  </ion-content>
+  

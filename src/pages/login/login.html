@@ -1,0 +1,29 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle *ngIf="changepassword">
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title *ngIf="changepassword">ยืนยันตัวตน</ion-title>
+    <ion-title *ngIf="!changepassword">HybridApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h5 text-center *ngIf="changepassword">กรุณายืนยันตัวตนเพื่อเปลี่ยนรหัสผ่าน</h5>
+    <h3 text-center *ngIf="!changepassword"><i class="fas fa-sign-in-alt fa-sm"></i>&nbsp;ลงชื่อเข้าใช้</h3>
+    <label *ngIf="changepassword">อีเมล์<ion-input type="text" [(ngModel)]="user.email" placeholder="ระบุอีเมล์" disabled></ion-input></label>
+    <label *ngIf="!changepassword">อีเมล์<input type="text" [(ngModel)]="user.email" placeholder="ระบุอีเมล์"></label>
+    <label>รหัสผ่าน <input type="password" [(ngModel)]="user.password" placeholder="ระบุรหัสผ่าน"></label>
+    <button *ngIf="!changepassword" class="login" (click)="login(user)">ลงชื่อเข้าใช้</button>
+    <button *ngIf="changepassword" class="login" (click)="login(user)">ดำเนินการต่อ</button>
+    <button *ngIf="!changepassword" clear class="register" (click)="register()">สมัครสมาชิก</button>
+</ion-content>  

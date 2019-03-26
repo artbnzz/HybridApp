@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="float:left">แผนที่</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <div #map id="map"></div>
+    <p align="center" class="fontmap">พิกัดตำแหน่งปัจจุบัน <br>ละติจูด : {{ position1 }} <br>ลองติจูด : {{ position2 }} </p>
+    <ion-row center>  
+      <ion-col text-center>   
+        <button style="text-align: center;margin-top:-30px;" ion-button round id="btn-location"><i class="fas fa-search-location fa-lg"></i></button> 
+      </ion-col> 
+     </ion-row>
+</ion-content>

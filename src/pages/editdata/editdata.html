@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="float:left">แก้ไขข้อมูล</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <label>อีเมล์ <ion-input [(ngModel)]="user.email" type="text" disabled></ion-input></label>
+    <label>ชื่อ <ion-input type="text" [(ngModel)]="user.firstname" placeholder="ระบุชื่อ"></ion-input></label>
+    <label>นามสกุล <ion-input type="text" [(ngModel)]="user.lastname" placeholder="ระบุนามสกุล"></ion-input></label>
+    <label>เบอร์โทรศัพท์ <ion-input type="tel" [(ngModel)]="user.tel" [maxlength]="10" [minlength]="10" (keypress)="numberOnly($event)" placeholder="ระบุเบอร์โทรศัพท์"></ion-input></label>
+    <button clear class="editdata" (click)="confirmdata(user)">บันทึก</button>
+</ion-content>
